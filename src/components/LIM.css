@@ -1,0 +1,313 @@
+/* Body styling */
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for LIM letters */
+.lim-container {
+  position: absolute;
+  width: 500px; /* Adjusted width to ensure tighter spacing */
+  height: 500px;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  display: flex;
+  justify-content: space-evenly; /* This ensures even and tight distribution */
+  align-items: center;
+  gap: 10px; /* Reduced gap for tighter spacing between letters */
+}
+
+.letter {
+  position: relative;
+  display: inline-block;
+}
+
+.L-line, .I-line, .M-line {
+  position: absolute;
+  background-color: white;
+  transition: all 1s ease-in-out;
+}
+
+/* L shape */
+.L-line.vertical {
+  width: 10px;
+  height: 0;
+  top: 0;
+  left: 0;
+  transition: height 1s ease-in-out;
+}
+
+.L-line.horizontal {
+  height: 10px;
+  width: 0;
+  top: 100px;
+  left: 0;
+  transition: width 1s ease-in-out 1s;
+}
+
+
+.L-animation .L-line.vertical {
+  height: 100px;
+}
+
+.L-animation .L-line.horizontal {
+  width: 80px;
+}
+
+/* I shape */
+.I-line.vertical {
+  width: 10px;
+  height: 0;
+  top: 10px;
+  left: 5px;
+  transition: height 1s ease-in-out;
+}
+
+.I-line.horizontal1 {
+  height: 10px;
+  width: 0;
+  top: 0px;
+  left: -25px;
+  transition: width 1s ease-in-out;
+}
+
+.I-line.horizontal2 {
+  height: 10px;
+  width: 0;
+  top: 100px;
+  left: -25px;
+  transition: width 1s ease-in-out;
+}
+
+.I-animation .I-line.vertical {
+  height: 100px;
+}
+
+.I-animation .I-line.horizontal1 {
+  width: 75px;
+}
+
+.I-animation .I-line.horizontal2 {
+  width: 75px;
+}
+
+/* M shape (using divs) */
+
+/* Left inverted U */
+.M-line-inverted-U-left {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border-radius: 50px 50px 0 0;
+  border: 10px solid white;
+  border-bottom: none;
+  background-color: transparent;
+  transition: height 1s ease-in-out;
+  left: -40px; /* Adjusted position to bring it closer */
+  top:200px;
+  position:relative;
+}
+
+.M-line-vertical-U {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border-radius: 0 0 50px 50px;
+  border: 10px solid white;
+  border-top: none;
+  background-color: transparent;
+  top: 270px;
+  left:25%;
+  transform: translateX(-50%);
+  transition: height 1s ease-in-out;
+  transition-delay: 1s;
+}
+
+/* Right inverted U */
+.M-line-inverted-U-right {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border-radius: 50px 50px 0 0;
+  border: 10px solid white;
+  border-bottom: none;
+  background-color: transparent;
+  transition: height 1s ease-in-out;
+  right: -20px; /* Adjusted position to bring it closer */
+  transition-delay: 1.5s;
+  top:200px;
+}
+
+/* M Animation */
+.M-animation .M-line-inverted-U-left {
+  height: 110px;
+}
+
+.M-animation .M-line-vertical-U {
+  height: 50px;
+}
+
+.M-animation .M-line-inverted-U-right {
+  height: 110px;
+}
+
+/* Continuing U shapes */
+.M-line-vertical-U-1, .M-line-vertical-U-2, .M-line-vertical-U-3 {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border-radius: 0 0 50px 50px;
+  border: 10px solid white;
+  border-top: none;
+  background-color: transparent;
+  transition: height 1s ease-in-out;
+}
+
+.M-line-vertical-U-1 {
+  top:248px;
+  left:0px;
+  position:absolute;
+}
+
+.M-line-vertical-U-2 {
+  top:300px;
+  position:absolute;
+}
+
+.M-line-vertical-U-3 {
+  top:300px;
+  position:absolute;
+}
+
+/* Inverted U shapes for continuation */
+.M-line-inverted-U-1, .M-line-inverted-U-2, .M-line-inverted-U-3 {
+  position: absolute;
+  width: 20px;
+  height: 0;
+  border-radius: 50px 50px 0 0;
+  border: 10px solid white;
+  border-bottom: none;
+  background-color: transparent;
+  transition: height 1s ease-in-out;
+}
+
+.M-line-inverted-U-1{
+  top:200px;
+  position:absolute;
+}
+
+.M-line-inverted-U-2{
+  top:150px;
+  position:absolute;
+}
+
+.M-line-inverted-U-3{
+  top:92px;
+  position:absolute;
+}
+
+
+/* U1 to U6 animations */
+.M-animation .M-line-vertical-U-1 {
+  left: calc(50% + 30px); /* Adjusted for tighter spacing */
+  height: 100px;
+}
+
+.M-animation .M-line-inverted-U-1 {
+  left: calc(50% + 60px); /* Adjusted for tighter spacing */
+  height: 100px;
+}
+
+.M-animation .M-line-vertical-U-2 {
+  left: calc(50% + 89px); /* Adjusted for tighter spacing */
+  height:100px;
+}
+
+.M-animation .M-line-inverted-U-2 {
+  left: calc(50% + 118px); /* Adjusted for tighter spacing */
+  height: 150px;
+}
+
+.M-animation .M-line-vertical-U-3 {
+  left: calc(50% + 148px); /* Adjusted for tighter spacing */
+  height: 150px;
+}
+
+.M-animation .M-line-inverted-U-3 {
+  left: calc(50% + 177px); /* Adjusted for tighter spacing */
+  height: 200px;
+}
+
+.M-animation .M-line-vertical-U-4 {
+  left: calc(50% + 390px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+.M-animation .M-line-inverted-U-4 {
+  left: calc(50% + 450px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+.M-animation .M-line-vertical-U-5 {
+  left: calc(50% + 510px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+.M-animation .M-line-inverted-U-5 {
+  left: calc(50% + 570px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+.M-animation .M-line-vertical-U-6 {
+  left: calc(50% + 630px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+.M-animation .M-line-inverted-U-6 {
+  left: calc(50% + 690px); /* Adjusted for tighter spacing */
+  height: 50px;
+}
+
+/* L shape - horizontal line for L */
+.L-line-horizontal-1 {
+  position: absolute;
+  height: 10px;
+  width: 80px;
+  background-color: white;
+  top: 90px; /* Adjust as per your design */
+  left:467px; /* Adjust as per your design */
+  z-index: 10; /* Ensure it's on top */
+}
+
+/* Animation for L-line-horizontal-1 */
+.L-animation .L-line-horizontal-1 {
+  width: 1000px; /* Width after animation */
+}
+
+
+.M .L-line-horizontal-1 {
+  position: absolute;
+  width: 80px;
+  height: 10px;
+  top: 110px; /* Adjust this value */
+  left: 60px; /* Adjust this value */
+}
+
+
+/* Mobile Responsive Design for LIM container */
+@media (max-width: 768px) {
+  .lim-container {
+    width: 300px; /* Make the container smaller on mobile */
+    height: 300px; /* Adjust height to match width */
+    font-size: 30px; /* Reduce font size for better fitting */
+    gap: 5px; /* Reduce gap between letters */
+  }
+}
+
+

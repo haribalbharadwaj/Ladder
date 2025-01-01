@@ -1,0 +1,174 @@
+.folding-boxes-container {
+  height: 300vh; /* Increase height for scrolling */
+  position: relative;
+}
+
+/* Folding Box Styles */
+.folding-box {
+  width: 80%;
+  height: 100vh;
+  border: 2px solid #333;
+  border-radius: 10px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 100px); /* Start slightly below the center */
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease, width 0.8s ease, height 0.8s ease;
+  z-index: 0; /* Initially behind other sections */
+}
+
+.folding-box.active {
+  opacity: 1;
+  transform: translate(-50%, 0); /* Move to the center */
+  z-index: 2; /* Bring active section to the front */
+  width: 80%;  /* Keep full width */
+  height:50%; /* Full height */
+}
+
+.folding-box.transitioning {
+  transform: translate(-50%, -50px); /* Move slightly upwards during transition */
+  opacity: 0.8; /* Slight fade during transition */
+  z-index: 1; /* Place it behind the active section */
+}
+
+.folding-box.inactive {
+  opacity: 0.15; /* Fade inactive sections even more for a more diluted effect */
+  transform: translate(-50%, -200px) scale(0.85); /* Shrink and move inactive sections up */
+  z-index: 0; /* Move behind the active one */
+  width: 70%;  /* Decrease width */
+  height: 85vh; /* Decrease height */
+}
+
+.folding-box.inactive:nth-child(2) {
+  transform: translate(-50%, -300px) scale(0.75); /* Further shrink the second inactive section */
+  z-index: -1; /* Move it further back */
+  width: 60%;  /* Decrease width more */
+  height: 70vh; /* Decrease height more */
+}
+
+.folding-box.inactive:nth-child(3) {
+  transform: translate(-50%, -400px) scale(0.65); /* Shrink the third inactive section */
+  z-index: -2; /* Move it further back */
+  width: 50%;  /* Further decrease width */
+  height: 60vh; /* Further decrease height */
+}
+
+/* Header Styles */
+.box-header-c, .box-header-p, .box-header-d {
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 24px;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  top: 20%;
+}
+
+.numbers {
+  font-size: 200px; /* Adjusted size */
+  font-weight: bold;
+  position: absolute;
+  top: 50%; /* Adjusted to fit better */
+  left: -100px;
+  transform: translateY(-50%); /* Keeps the number vertically centered */
+  color: rgba(255, 184, 79, 0.8);
+  z-index: 1; /* Ensure it stays on top */
+  white-space: nowrap; /* Prevents text from breaking into multiple lines */
+}
+
+/* Text Container Styles */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin-left: 100px;
+}
+
+.text-container span {
+  font-size: 18px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.text-container span:nth-child(2) {
+  margin-top: -20px; /* Move the second span upwards */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .folding-box {
+    width: 90%;
+    height: 80vh;
+  }
+
+  .folding-box.active {
+    width: 90%;
+    height: 60vh;
+  }
+
+  .folding-box.inactive {
+    width: 85%;
+    height: 70vh;
+  }
+
+  .box-header-c, .box-header-p, .box-header-d {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    padding: 10px 15px;
+  }
+
+  .numbers {
+    font-size: 120px; /* Smaller font size for mobile */
+    left: -50px;
+  }
+
+  .text-container {
+    margin-left: 20px; /* Reduce margin for smaller screens */
+    max-width: 100%;
+  }
+
+  .text-container span {
+    font-size: 16px; /* Adjust font size for text */
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .folding-box {
+    width: 95%;
+    height: 70vh;
+  }
+
+  .folding-box.active {
+    width: 95%;
+    height: 50vh;
+  }
+
+  .folding-box.inactive {
+    width: 90%;
+    height: 60vh;
+  }
+
+  .box-header-c, .box-header-p, .box-header-d {
+    font-size: 18px; /* Further reduce font size */
+    padding: 8px 12px;
+  }
+
+  .numbers {
+    font-size: 100px; /* Smaller font size for very small screens */
+    left: -30px;
+  }
+
+  .text-container {
+    margin-left: 10px; /* Reduce margin further */
+  }
+
+  .text-container span {
+    font-size: 14px; /* Adjust font size for text on very small screens */
+  }
+}
