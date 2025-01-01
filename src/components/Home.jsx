@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <div className="home-page">
+    <div className="home-page"  style={{top:'200px',left:'600px',position:'absolute'}}>
     <h1>Welcome to the Interactive Page</h1>
     <div className="navigation-buttons">
       <Link to="/revolving-box">

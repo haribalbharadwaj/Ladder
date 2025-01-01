@@ -50,8 +50,10 @@ const RevolvingBox = () => {
         </div>
 
         <div className={`face back ${currentFace === 'back' ? 'focused' : ''}`}>
+          <div style={{transform: 'rotate(180deg)'}}>
           <h1>Real Estate Photography</h1>
           <span>Highlight the best features of your property with our real estate photography services.</span>
+          </div>
         </div>
 
         <div className={`face left ${currentFace === 'left' ? 'focused' : ''}`}>
